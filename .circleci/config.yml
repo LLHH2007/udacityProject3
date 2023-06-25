@@ -717,7 +717,7 @@ workflows:
 
 
 
-      - send-slack-msg
+      - send-slack-msg:
 
           context:
 
