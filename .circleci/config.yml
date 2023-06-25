@@ -1,4 +1,3 @@
-# LongH3 config
 version: 2.1
 
 
@@ -177,8 +176,6 @@ jobs:
 
           command: |
 
-            # Your code here
-
             cd backend
 
             npm install
@@ -186,24 +183,14 @@ jobs:
             npm run build
 
             #  exit 1
-
       - save_cache:
-
           paths: [backend/node_modules]
-
           key: backend-build
 
-
-
-
   test-frontend:
-
     docker:
-
       - image: circleci/node:13.8.0
-
     steps:
-
       # Checkout code from git
 
       - checkout
@@ -314,6 +301,8 @@ jobs:
 
             npm install
 
+
+
             npm update
 
             npm audit fix --force
@@ -326,9 +315,14 @@ jobs:
 
           key: frontend-scan
 
+
+
+
   scan-backend:
 
     docker:
+
+      # Docker image here
 
       - image: circleci/node:13.8.0
 
@@ -352,7 +346,9 @@ jobs:
 
           command: |
 
-            cd backend            npm install
+            cd backend
+
+            npm install
 
             npm update mkdirp --depth 2
 
