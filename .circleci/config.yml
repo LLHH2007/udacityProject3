@@ -5,7 +5,7 @@ version: 2.1
 
 orbs:
 
-  slack: circleci/slack@4.1
+  # slack: circleci/slack@4.1
 
   node: circleci/node@5.1.0
 
@@ -81,31 +81,31 @@ jobs:
 
  
 
-  send-slack-msg:
+  # send-slack-msg:
 
-    executor:
+  #   executor:
 
-      name: node/default
+  #     name: node/default
 
-    steps:
+  #   steps:
 
-      - run:
+  #     - run:
 
-          name: "Notifications"
+  #         name: "Notifications"
 
-          command: |
+  #         command: |
 
-            echo $SLACK_DEFAULT_CHANEL
+  #           echo $SLACK_DEFAULT_CHANEL
 
-      - slack/notify:
+  #     - slack/notify:
 
-          channel: $SLACK_DEFAULT_CHANEL
+  #         channel: $SLACK_DEFAULT_CHANEL
 
-          # event: fail
+  #         # event: fail
 
-          event: always
+  #         event: always
 
-          template: basic_fail_1
+  #         template: basic_fail_1
 
  
 
@@ -717,11 +717,11 @@ workflows:
 
 
 
-      - send-slack-msg:
+      # - send-slack-msg:
 
-          context:
+      #     context:
 
-            - slack-secret
+      #       - slack-secret
 
       - build-frontend
 
