@@ -520,7 +520,7 @@ jobs:
             ## Check if old workflow id is in the stack names
             if [[ "${CIRCLE_WORKFLOW_ID:0:7}" =~ "${OldWorkflowID}" ]]
             then
-              echo '--------------DELETE All CLOUDFORMATION---------------'
+              echo '--------------DELETE CONFIRM---------------'
               aws s3 rm "s3://udapeople-${OldWorkflowID}" --recursive
               aws cloudformation delete-stack --stack-name "udapeople-backend-${OldWorkflowID}"
               aws cloudformation delete-stack --stack-name "udapeople-frontend-${OldWorkflowID}"
@@ -563,5 +563,5 @@ workflows:
           requires: [smoke-test]
       # I commented out the cleanup job because it will delete the infrastructure when I run the workflow and Reviewer cant review my work (website)
       # But If I uncomment it, it will delete the infrastructure after the workflow is done.It runs normally.
-      # - cleanup:
-      #     requires: [cloudfront-update]
+      - cleanup:
+          requires: [cloudfront-update]
