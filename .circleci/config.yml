@@ -294,7 +294,7 @@ jobs:
             if grep -q "success" ~/project/backend/migrations.txt
             then
               # Send 1 to kvdb if migrations were successful to trigger next job
-              curl --insecure https://kvdb.io/GDXbD1Lre6YQ6KE3EyVjgd/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
+              curl --insecure https://kvdb.io/9JFueppZWxcevcqeK5VrhM/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
             fi
       # Destroy infrastructure if job fails to prevent unnecessary costs
       - destroy-environment:
