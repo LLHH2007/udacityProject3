@@ -1,5 +1,9 @@
 #GET_PASSES_THIS_REPO_UDACITY_PLEASE
 
+For Reviewer:
+
+Please excuse me if you encounter any abnormal behavior on the CloudFront website. The reason is that my EC2 instance reboots every hour, causing a change in the public IP and consequently affecting the backend API endpoints. However, rest assured that at the time ofmy completion, the API calls and usage should work normally. Furthermore, after completing this project, I conducted tests by adding additional employees on the website, and they functioned properly (you can refer to the attached evidence). Thank you very much!
+
 
 We are archiving this repository because we do not want learners to push personal development to the current repository. If you have any issues or suggestions to make, feel free to:
 - Utilize the https://knowledge.udacity.com/ forum to seek help on content-specific issues.
